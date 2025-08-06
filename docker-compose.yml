@@ -18,5 +18,5 @@ services:
   db:
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE: wordpress_sql
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: railway
+      MYSQL_ROOT_PASSWORD: iZpdsssFymunCtRULTLkmzKQxFKnnOBZ
