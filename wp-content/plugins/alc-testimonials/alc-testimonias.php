@@ -103,3 +103,33 @@ function alc_rest_testimonials($request) {
 
     return rest_ensure_response($results);
 }
+
+add_action('admin_menu', function () {
+    add_options_page('ALC Settings', 'ALC', 'manage_options', 'alc-settings', 'alc_settings_page');
+});
+
+function alc_settings_page() {
+    ?>
+    <div class="wrap">
+        <h1>ALC Settings</h1>
+        <form method="post" action="options.php">
+            <?php
+            settings_fields('alc-settings');
+            do_settings_sections('alc-settings');
+            submit_button();
+            ?>
+        </form>
+    </div>
+    <?php
+}
+
+add_action('admin_init', function () {
+    register_setting('alc-settings', 'alc_site_slogan');
+    add_settings_section('alc_main', 'Main Settings', null, 'alc-settings');
+    add_settings_field('alc_slogan', 'Site Slogan', 'alc_slogan_input', 'alc-settings', 'alc_main');
+});
+
+function alc_slogan_input() {
+    $value = get_option('alc_site_slogan', '');
+    echo '<input type="text" name="alc_site_slogan" value="' . esc_attr($value) . '" />';
+}
