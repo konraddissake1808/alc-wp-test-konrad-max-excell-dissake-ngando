@@ -22,3 +22,12 @@ add_action('enqueue_block_editor_assets', function () {
         true
     );
 });
+
+register_block_pattern('alc/hero', [
+    'title' => 'Hero ALC',
+    'content' => '<!-- wp:heading --><h2>Welcome to ALC</h2><!-- /wp:heading -->',
+]);
+
+add_action('wp_footer', function() {
+    echo '<p style="text-align:center;">Powered by ALC Child Theme</p>';
+});
