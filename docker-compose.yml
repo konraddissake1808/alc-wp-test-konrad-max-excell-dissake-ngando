@@ -8,10 +8,12 @@ services:
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: root
-      WORDPRESS_DB_PASSWORD: example
+      WORDPRESS_DB_PASSWORD: password1
       WORDPRESS_DB_NAME: wordpress
     volumes:
       - ./wp-content:/var/www/html/wp-content
+    depends_on:
+      - db
 
   db:
     image: mysql:5.7

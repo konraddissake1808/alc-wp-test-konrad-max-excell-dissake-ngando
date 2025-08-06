@@ -1,0 +1,16 @@
+{
+  "apiVersion": 2,
+  "name": "alc/cta-banner",
+  "title": "CTA Banner",
+  "category": "widgets",
+  "icon": "megaphone",
+  "description": "Call-to-action block with title, text, link, and background color",
+  "attributes": {
+    "title": { "type": "string", "default": "Join Us!" },
+    "text": { "type": "string", "default": "Start your journey today." },
+    "url": { "type": "string", "default": "#" },
+    "backgroundColor": { "type": "string", "default": "#f0f0f0" }
+  },
+  "editorScript": "alc-block-editor",
+  "style": "alc-block-style"
+}
